@@ -62,7 +62,7 @@ The common/proxy.conf file is configured via a handful of attributes. Specifical
 
 ### X-Queue-Start time format ###
 
-As of version 1.2.7, nginx supports millisecond time resolution, so the X-Queue-Start header should be expressed in terms of milliseconds. Unfortunately, this cookbook cannot detect the version of nginx that is installed, so this must be set manually. It has no default, instead raising an error if the feature is not explicitly enabled/disabled.
+As of version 1.2.7, nginx supports millisecond time resolution, so the X-Queue-Start header should be expressed in terms of milliseconds. Unfortunately, this cookbook cannot detect the version of nginx that is installed, so this must be set manually. **It has no default, instead raising an error if the feature is not explicitly enabled/disabled.**
 
 ```
 # attributes/default.rb
