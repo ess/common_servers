@@ -6,7 +6,7 @@ client_max_body_size <%= @client_max_body_size %>;
 
 <%- if @use_verb_whitelist %>
   # Allow only whitelisted HTTP verbs
-  if ($request_method !~ ^(<%= @whitelisted_versb %>)$ ) {
+  if ($request_method !~ ^(<%= @whitelisted_verbs %>)$ ) {
     return 403;
   }
 <%- end %>
