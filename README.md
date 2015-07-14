@@ -58,35 +58,35 @@ default[:common_server] = {
     :enabled => true,
 
     :accepted_verbs => [
-      'ACL',¬
-      'BASELINE-CONTROL',¬
-      'CHECKIN',¬
-      'CHECKOUT',¬
-      'CONNECT',¬
-      'COPY',¬
-      'DELETE',¬
-      'GET',¬
-      'HEAD',¬
-      'LABEL',¬
-      'LOCK',¬
-      'MERGE',¬
-      'MKACTIVITY',¬
-      'MKCOL',¬
-      'MKWORKSPACE',¬
-      'MOVE',¬
-      'OPTIONS',¬
-      'ORDERPATCH',¬
-      'PATCH',¬
-      'POST',¬
-      'PROPFIND',¬
-      'PROPPATCH',¬
-      'PUT',¬
-      'REPORT',¬
-      'SEARCH',¬
-      'TRACE',¬
-      'UNCHECKOUT',¬
-      'UNLOCK',¬
-      'UPDATE',¬
+      'ACL',
+      'BASELINE-CONTROL',
+      'CHECKIN',
+      'CHECKOUT',
+      'CONNECT',
+      'COPY',
+      'DELETE',
+      'GET',
+      'HEAD',
+      'LABEL',
+      'LOCK',
+      'MERGE',
+      'MKACTIVITY',
+      'MKCOL',
+      'MKWORKSPACE',
+      'MOVE',
+      'OPTIONS',
+      'ORDERPATCH',
+      'PATCH',
+      'POST',
+      'PROPFIND',
+      'PROPPATCH',
+      'PUT',
+      'REPORT',
+      'SEARCH',
+      'TRACE',
+      'UNCHECKOUT',
+      'UNLOCK',
+      'UPDATE',
       'VERSION-CONTROL'
     ]
   }
