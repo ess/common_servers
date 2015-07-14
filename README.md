@@ -58,6 +58,24 @@ default[:nginx_common] = {
 
 ## common/proxy.conf ##
 
+The common/proxy.conf file is configured via a handful of attributes. Specifically, one can easily configure the global `proxy_max_temp_file_size`, `proxy_connect_timeout`, `proxy_read_timeout`, `proxy_send_timeout`, and time formatting for the X-Queue-Start header
+
+### X-Queue-Start time format ###
+
+As of version 1.2.7, nginx supports millisecond time resolution, so the X-Queue-Start header should be expressed in terms of milliseconds. Unfortunately, this cookbook cannot detect the version of nginx that is installed, so this must be set manually. It has no default, instead raising an error if the feature is not explicitly enabled/disabled.
+
+```
+# attributes/default.rb
+
+# use_msec_time is true to enable, false to disable
+
+default[:nginx_common] = {
+  :proxy => {
+    :use_msec_time => true
+  }
+}
+```
+
 ### Proxy Max Temp File Size ###
 
 Set the global `proxy_max_temp_file_size`, which defaults to 0 if not specified.
@@ -124,6 +142,7 @@ Tying it all together, here's an example that uses all of the `nginx_common` cus
 
 default[:nginx_common] = {
   :proxy => {
+    :use_msec_time => true,
     :max_temp_file_size => 0,
     :connect_timeout => 300,
     :send_timeout => 300,

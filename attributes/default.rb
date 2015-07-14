@@ -1,5 +1,5 @@
 #
-# Cookbook Name: common_servers
+# Cookbook Name: nginx_common
 # Attributes: default
 #
 

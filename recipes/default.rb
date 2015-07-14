@@ -1,9 +1,13 @@
 #
-# Cookbook Name:: common_servers
+# Cookbook Name:: nginx_common
 # Recipe:: default
 #
 
-use_msec = (nginx_version.split('.').map(&:to_i) <=> [1,2,7]) >= 0
+use_msec = node[:nginx_common][:proxy][:use_msec_time]
+
+if use_msec.nil?
+  raise "You must set default[:nginx_common][:proxy][:use_msec_time]"
+end
 
 template "/data/nginx/common/servers.conf" do
   owner node[:owner_name]
