@@ -49,3 +49,8 @@ file "/data/nginx/common/keep.proxy.conf" do
   mode 0644
   content "# This file is managed via the nginx_common cookbook.\n# Please do not edit it."
 end
+
+service "nginx" do
+  supports :status => true, :restart => true, :reload => true
+  action [ :reload ]
+end
