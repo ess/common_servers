@@ -4,6 +4,13 @@
 # Max size for file uploads
 client_max_body_size <%= @client_max_body_size %>;
 
+<%- if @use_verb_whitelist %>
+  # Allow only whitelisted HTTP verbs
+  if ($request_method !~ ^(<%= @whitelisted_versb %>)$ ) {
+    return 403;
+  }
+<%- end %>
+
 # HTTP Error handling.
 #
 # 404 - Resource Not found.
