@@ -15,9 +15,9 @@ template "/data/nginx/common/servers.conf" do
   mode 0644
   source "servers.conf.erb"
   variables({
-    :client_max_body_size => node[:nginx_common][:server][:client_max_body_size],
-    :use_verb_whitelist => node[:common_servers][:server][:http_white_list][:enabled],
-    :whitelisted_verbs => (node[:common_servers][:server][:http_white_list][:accepted_verbs] || []).join("|")
+    :client_max_body_size => node[:nginx_common][:servers][:client_max_body_size],
+    :use_verb_whitelist => node[:common_servers][:servers][:http_white_list][:enabled],
+    :whitelisted_verbs => (node[:common_servers][:servers][:http_white_list][:accepted_verbs] || []).join("|")
 
   })
 end
